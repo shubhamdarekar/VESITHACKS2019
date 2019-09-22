@@ -61,10 +61,36 @@
         </div>
     </div>
     <script>
-            $("button").click(function(){
-                $("#here").html('<object data="/templates/EvaluationApp/reportform.html">');
-            });
-    </script>
+        function loadDoc(button) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                     document.getElementById("here").innerHTML = this.responseText;
+                    }
+                    };
+    
+                    switch(button.id){
+                        case 'button1':
+                        xhttp.open("GET", "/reportform/", true);
+                        break;
+                        case 'button2':
+                        xhttp.open("GET", "/feedback/", true);
+                        break;
+                        case 'button3':
+                        xhttp.open("GET", "/ratinghistory/", true);
+                        break;
+                        case 'button4':
+                        xhttp.open("GET", "/suggestions/", true);
+                        break;
+                        case 'button5':
+                        xhttp.open("GET", "/submitreporthistory/", true);
+                        break;
+    
+                    }
+                    
+                    xhttp.send();
+            }
+        </script>
         
     <script src="{% static  '/jsed/jquery.min.js' %}"></script>
     <script src="{% static  '/bootstraped/js/bootstrap.min.js' %}"></script>

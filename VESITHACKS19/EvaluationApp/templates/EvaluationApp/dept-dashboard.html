@@ -21,13 +21,13 @@
 <body>
     <div></div>
     <nav class="navbar navbar-light navbar-expand-md navigation-clean-search">
-        <div class="container"><a class="navbar-brand" href="\index/">RARr</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><a class="navbar-brand" href="\index/">RATr</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Link 1</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Link 2</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Link 3</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">product</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">about us</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">contact us</a></li>
                 </ul>
                 <form class="form-inline mr-auto" target="_self">
                     <div class="form-group"><label for="search-field"><i class="fa fa-search"></i></label><input class="form-control search-field" type="search" name="search" id="search-field" style="color:#37434d;background-color:rgba(39,99,169,0.38);"></div>
@@ -37,9 +37,9 @@
     <div id="wrapper">
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li> <button class="btn btn-dark btn-block" type="button" name="button" id="button">Submit Report</button></li>
-                <li> <button class="btn btn-dark btn-block" type="button" name="button" id="button">Employee Assessment&nbsp;</button></li>
-                <li> <button class="btn btn-dark btn-block" type="button" name="button" id="button">Dept-head feedback</button></li>
+                <li> <button class="btn btn-dark btn-block" type="button" name="button" id="button1" onclick = 'loadDoc(this)'>Submit Report</button></li>
+                <li> <button class="btn btn-dark btn-block" type="button" name="button" id="button2" onclick = 'loadDoc(this)'>Employee Assessment&nbsp;</button></li>
+                <li> <button class="btn btn-dark btn-block" type="button" name="button" id="button3" onclick = 'loadDoc(this)'>Dept-head feedback</button></li>
             </ul>
         </div>
         <div class="page-content-wrapper">
@@ -49,7 +49,6 @@
                         <div id="here">
                             
                         </div>
-                        <p>Paragraph</p>
                     </div>
                 </div>
             </div>
@@ -57,10 +56,35 @@
     </div>
     <div id="wrapper"></div>
     <script>
-        $("button").click(function(){
-            $("#here").html('<object data="reportform.html">');
-        });
+        function loadDoc(button) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                     document.getElementById("here").innerHTML = this.responseText;
+                    }
+                    };
     
+                    switch(button.id){
+                        case 'button1':
+                        xhttp.open("GET", "/reportform/", true);
+                        break;
+                        case 'button2':
+                    xhttp.open("GET", "/Empassessment/", true);
+                        break;
+                        case 'button3':
+                    xhttp.open("GET", "/deptheadfeedback/", true);
+                        break;
+                        case 'button4':
+                    xhttp.open("GET", "/viewuser/", true);
+                        break;
+    
+                    }
+                    xhttp.open("GET", "/adduser/", true);
+                    xhttp.send();
+            }
+                 $("#button1").click(function(){
+                    $("#here").html();
+                });     
     </script>
     <script src="{% static '/jsdept/jquery.min.js'  %}"></script>
     <script src="{% static '/bootstrapdept/js/bootstrap.min.js'  %}"></script>

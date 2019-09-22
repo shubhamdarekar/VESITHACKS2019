@@ -32,6 +32,6 @@ urlpatterns = [
     # url('^dhDashboard/$',views.dhDash),
     # url('^dtDashboard/$',views.dtDash),
     # url('^associateDashboard/$',views.associateDash),
-    # url('^employeeDashboard/$',views.employeeDash),
+    url('^employeeDashboard/$',views.employeeDash),
 
 ]

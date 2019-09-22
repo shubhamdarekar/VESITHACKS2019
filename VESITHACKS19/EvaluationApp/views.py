@@ -62,8 +62,11 @@ def verifyLogin(request):
 			# 	return redirect('/dtDashboard/')
 			# elif user.role == 'ASSOCIATE':
 			# 	return redirect('/associateDashboard/')
-			# elif user.role == 'EMPLOYEE':
-			# 	return redirect('/employeeDashboard/')
+			elif user.role == 'EMPLOYEE':
+				return redirect('/employeeDashboard/')
 
 def adminDash(request):
 	return render(request,"EvaluationApp/admin-dashboard.html")
+
+def employeeDash(request):
+	return render(request,"EvaluationApp/employeedash.html")

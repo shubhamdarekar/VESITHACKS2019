@@ -29,6 +29,7 @@ urlpatterns = [
     url('^adminDashboard/$',views.adminDash),
     url('^logout/$',views.logout)
     # url('^mdDashboard/$',views.mdDash),
+    url('^mdDashboard/$',views.mdDash),
     # url('^hrDashboard/$',views.hrDash),
     # url('^dhDashboard/$',views.dhDash),
     # url('^dtDashboard/$',views.dtDash),

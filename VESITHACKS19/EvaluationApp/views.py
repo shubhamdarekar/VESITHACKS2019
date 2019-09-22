@@ -51,8 +51,8 @@ def verifyLogin(request):
 			request.session['logged_in'] = user.id
 			if user.role == 'ADMIN':
 				return redirect('/adminDashboard/')
-			# elif user.role == 'MD':
-			# 	return redirect('/mdDashboard/')
+			elif user.role == 'MD':
+				return redirect('/mdDashboard/')
 			# elif user.role == 'HR':
 			# 	return redirect('/hrDashboard/')
 			# elif user.role == 'DH':
@@ -78,3 +78,8 @@ def logout(request):
 		pass
 	return render(request,"EvaluationApp/landing_page.html")
 
+def employeeDash(request):
+	return render(request,"EvaluationApp/employeedash.html")
+
+def mdDash(request):
+	return render(request,"EvaluationApp/mddashboard.html")

@@ -9,7 +9,7 @@ from EvaluationApp.forms import LoginForm
 from .models import User
 
 def index(request):
-	return render(request,"EvaluationApp/landing page.html")
+	return render(request,"EvaluationApp/landing_page.html")
 # Create your views here.
 
 def Login(request):

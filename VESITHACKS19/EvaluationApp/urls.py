@@ -27,13 +27,12 @@ urlpatterns = [
     url('^reportform/$',views.openrpt),
     url('^loginVerify/$',views.verifyLogin),
     url('^adminDashboard/$',views.adminDash),
-    url('^logout/$',views.logout)
-    # url('^mdDashboard/$',views.mdDash),
+    url('^logout/$',views.logout),
     url('^mdDashboard/$',views.mdDash),
-    # url('^hrDashboard/$',views.hrDash),
-    # url('^dhDashboard/$',views.dhDash),
-    # url('^dtDashboard/$',views.dtDash),
-    # url('^associateDashboard/$',views.associateDash),
-    # url('^employeeDashboard/$',views.employeeDash),
+    url('^hrDashboard/$',views.hrDash),
+    url('^dhDashboard/$',views.dhDash),
+    url('^dtDashboard/$',views.dtDash),
+    url('^associateDashboard/$',views.associateDash),
+    url('^employeeDashboard/$',views.employeeDash),
 
 ]

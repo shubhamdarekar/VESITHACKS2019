@@ -53,23 +53,16 @@ def verifyLogin(request):
 				return redirect('/adminDashboard/')
 			elif user.role == 'MD':
 				return redirect('/mdDashboard/')
-			# elif user.role == 'HR':
-			# 	return redirect('/hrDashboard/')
-			# elif user.role == 'DH':
-			# 	return redirect('/dhDashboard/')
-			# elif user.role == 'DT':
-			# 	return redirect('/dtDashboard/')
-			# elif user.role == 'ASSOCIATE':
-			# 	return redirect('/associateDashboard/')
-			# elif user.role == 'EMPLOYEE':
-			# 	return redirect('/employeeDashboard/')
-
-def adminDash(request):
-	# if request.user.is_authenticated:
-	if(request.session['logged_in']):
-		return render(request,"EvaluationApp/admin-dashboard.html")
-	else:
-		return HttpResponse("Error")
+			elif user.role == 'HR':
+				return redirect('/hrDashboard/')
+			elif user.role == 'DH':
+				return redirect('/dhDashboard/')
+			elif user.role == 'DT':
+				return redirect('/dtDashboard/')
+			elif user.role == 'ASSOCIATE':
+				return redirect('/associateDashboard/')
+			elif user.role == 'EMPLOYEE':
+				return redirect('/employeeDashboard/')
 
 def logout(request):
 	try:
@@ -78,8 +71,52 @@ def logout(request):
 		pass
 	return render(request,"EvaluationApp/landing_page.html")
 
+def adminDash(request):
+	# if request.user.is_authenticated:
+	if(request.session['logged_in']):
+		return render(request,"EvaluationApp/admin-dashboard.html")
+	else:
+		return HttpResponse("Error")
+
 def employeeDash(request):
-	return render(request,"EvaluationApp/employeedash.html")
+	if(request.session['logged_in']):
+		return render(request,"EvaluationApp/employeedash.html")
+	else:
+		return HttpResponse("Error")
+	
 
 def mdDash(request):
-	return render(request,"EvaluationApp/mddashboard.html")
+	if(request.session['logged_in']):
+		return render(request,"EvaluationApp/mddashboard.html")
+	else:
+		return HttpResponse("Error")
+
+def hrDash(request):
+	if(request.session['logged_in']):
+		return render(request,"EvaluationApp/supervisordash.html")
+	else:
+		return HttpResponse("Error")
+
+def dtDash(request):
+	if(request.session['logged_in']):
+		return render(request,"EvaluationApp/dept-dashboard.html")
+	else:
+		return HttpResponse("Error")
+
+def dhDash(request):
+	if(request.session['logged_in']):
+		return render(request,"EvaluationApp/departmenthead.html")
+	else:
+		return HttpResponse("Error")
+
+def associateDash(request):
+	if(request.session['logged_in']):
+		return render(request,"EvaluationApp/associatedash.html")
+	else:
+		return HttpResponse("Error")
+
+def employeeDash(request):
+	if(request.session['logged_in']):
+		return render(request,"EvaluationApp/employeedash.html")
+	else:
+		return HttpResponse("Error")

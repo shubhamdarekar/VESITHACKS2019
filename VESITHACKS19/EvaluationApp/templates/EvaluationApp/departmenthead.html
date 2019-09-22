@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 
@@ -5,15 +7,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DepartmentHeadDashboard</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
-    <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
-    <link rel="stylesheet" href="assets/css/Sidebar-Menu.css">
-    <link rel="stylesheet" href="assets/css/Sidebar-Menu1.css">
-    <link rel="stylesheet" href="assets/css/SIdebar-Responsive-2.css">
-    <link rel="stylesheet" href="assets/css/SIdebar-Responsive-21.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="{% static '/bootstraphead/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static '/fontshead/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static '/csshead/Navigation-Clean.css' %}">
+    <link rel="stylesheet" href="{% static '/csshead/Navigation-with-Search.css' %}">
+    <link rel="stylesheet" href="{% static '/csshead/Sidebar-Menu.css' %}">
+    <link rel="stylesheet" href="{% static '/csshead/Sidebar-Menu1.css' %}">
+    <link rel="stylesheet" href="{% static '/csshead/SIdebar-Responsive-2.css' %}">
+    <link rel="stylesheet" href="{% static '/csshead/SIdebar-Responsive-21.css' %}">
+    <link rel="stylesheet" href="{% static '/csshead/styles.css' %}">
 </head>
 
 <body>
@@ -29,7 +31,7 @@
                 </ul>
                 <form class="form-inline mr-auto" target="_self">
                     <div class="form-group"><label for="search-field"><i class="fa fa-search"></i></label><input class="form-control search-field" type="search" name="search" id="search-field" style="color:#37434d;background-color:rgba(39,99,169,0.38);"></div>
-                </form><a class="btn btn-light action-button" role="button" href="#">Logout</a></div>
+                </form><a class="btn btn-light action-button" role="button" href="/logout">Logout</a></div>
         </div>
     </nav>
     <div id="wrapper">
@@ -61,9 +63,9 @@
         </div>
     </div>
     <div id="wrapper"></div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/Sidebar-Menu.js"></script>
+    <script src="{% static '/js/jquery.min.js' %}"></script>
+    <script src="{% static '/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static '/js/Sidebar-Menu.js' %}"></script>
 </body>
 
 </html>

@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
@@ -5,19 +6,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SupervisorDashboard</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static '/bootstrapsd/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static '/fonts/font-awesome.min.css' %}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abhaya+Libre">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Adamina">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya">
-    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
-    <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
-    <link rel="stylesheet" href="assets/css/Pretty-Search-Form.css">
-    <link rel="stylesheet" href="assets/css/Sidebar-Menu.css">
-    <link rel="stylesheet" href="assets/css/Sidebar-Menu1.css">
-    <link rel="stylesheet" href="assets/css/sidebar.css">
-    <link rel="stylesheet" href="assets/css/sidebar1.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="{% static '/csssd/Navigation-Clean.css' %}">
+    <link rel="stylesheet" href="{% static '/csssd/Navigation-with-Search.css' %}">
+    <link rel="stylesheet" href="{% static '/csssd/Pretty-Search-Form.css' %}">
+    <link rel="stylesheet" href="{% static '/csssd/Sidebar-Menu.css' %}">
+    <link rel="stylesheet" href="{% static '/csssd/Sidebar-Menu1.css' %}">
+    <link rel="stylesheet" href="{% static '/csssd/sidebar.css' %}">
+    <link rel="stylesheet" href="{% static '/csssd/sidebar1.css' %}">
+    <link rel="stylesheet" href="{% static '/csssd/styles.css' %}">
 </head>
 
 <body>
@@ -32,7 +33,7 @@
                 </ul>
                 <form class="form-inline mr-auto" target="_self">
                     <div class="form-group"><label for="search-field"><i class="fa fa-search"></i></label><input class="form-control search-field" type="search" name="search" id="search-field" style="background-color:rgba(39,99,169,0.38);margin:0px 5px;"></div>
-                </form><a class="btn btn-light action-button" role="button" href="#">Logout</a></div>
+                </form><a class="btn btn-light action-button" role="button" href="/logout">Logout</a></div>
         </div>
     </nav>
     <div id="wrapper">
@@ -56,9 +57,9 @@
             </div>
         </div>
     </div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/Sidebar-Menu.js"></script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/Sidebar-Menu.js' %}"></script>
 </body>
 
 </html>

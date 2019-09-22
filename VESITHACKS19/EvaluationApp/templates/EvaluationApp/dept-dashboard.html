@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
@@ -5,15 +6,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dept-team dashboad</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
-    <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
-    <link rel="stylesheet" href="assets/css/Sidebar-Menu.css">
-    <link rel="stylesheet" href="assets/css/Sidebar-Menu1.css">
-    <link rel="stylesheet" href="assets/css/SIdebar-Responsive-2.css">
-    <link rel="stylesheet" href="assets/css/SIdebar-Responsive-21.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="{% static '/bootstrapdept/css/bootstrap.min.css'  %}">
+    <link rel="stylesheet" href="{% static '/fontsdept/font-awesome.min.css'  %}">
+    <link rel="stylesheet" href="{% static '/cssdept/Navigation-Clean.css'  %}">
+    <link rel="stylesheet" href="{% static '/cssdept/Navigation-with-Search.css'  %}">
+    <link rel="stylesheet" href="{% static '/cssdept/Sidebar-Menu.css'  %}">
+    <link rel="stylesheet" href="{% static '/cssdept/Sidebar-Menu1.css'  %}">
+    <link rel="stylesheet" href="{% static '/cssdept/SIdebar-Responsive-2.css'  %}">
+    <link rel="stylesheet" href="{% static '/cssdept/SIdebar-Responsive-21.css'  %}">
+    <link rel="stylesheet" href="{% static '/cssdept/styles.css'  %}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
@@ -60,10 +61,10 @@
             $("#here").html('<object data="content.html">');
         });
     
-      </script>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/Sidebar-Menu.js"></script>
+    </script>
+    <script src="{% static '/jsdept/jquery.min.js'  %}"></script>
+    <script src="{% static '/bootstrapdept/js/bootstrap.min.js'  %}"></script>
+    <script src="{% static '/jsdept/Sidebar-Menu.js'  %}"></script>
 </body>
 
 </html>

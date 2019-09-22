@@ -22,9 +22,7 @@ def openemp(request):
 	return render(request,"EvaluationApp/employeedash.html")
 
 def opendept(request):
-	return render(request,
-	
-	"EvaluationApp/dept-dashboard.html")
+	return render(request,"EvaluationApp/dept-dashboard.html")
 
 def openrpt(request):
 	return render(request,"EvaluationApp/reportform.html")
@@ -50,6 +48,7 @@ def verifyLogin(request):
 		user = User.objects.get(email = email)
 
 		if pwd == user.password:
+			request.session['logged_in'] = user.id
 			if user.role == 'ADMIN':
 				return redirect('/adminDashboard/')
 			# elif user.role == 'MD':
@@ -62,11 +61,20 @@ def verifyLogin(request):
 			# 	return redirect('/dtDashboard/')
 			# elif user.role == 'ASSOCIATE':
 			# 	return redirect('/associateDashboard/')
-			elif user.role == 'EMPLOYEE':
-				return redirect('/employeeDashboard/')
+			# elif user.role == 'EMPLOYEE':
+			# 	return redirect('/employeeDashboard/')
 
 def adminDash(request):
-	return render(request,"EvaluationApp/admin-dashboard.html")
+	# if request.user.is_authenticated:
+	if(request.session['logged_in']):
+		return render(request,"EvaluationApp/admin-dashboard.html")
+	else:
+		return HttpResponse("Error")
 
-def employeeDash(request):
-	return render(request,"EvaluationApp/employeedash.html")
+def logout(request):
+	try:
+		del request.session['logged_in']
+	except KeyError:
+        pass
+	return render(request,"EvaluationApp/landing_page.html")
+

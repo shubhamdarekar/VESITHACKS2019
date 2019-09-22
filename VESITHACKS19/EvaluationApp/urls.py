@@ -19,5 +19,5 @@ from . import views
 urlpatterns = [
     
    url('',views.index,name= 'index'),
-    url('EvaluationApp/index',views.index,name= 'Index'),
+    url('index',views.index,name= 'Index'),
 ]

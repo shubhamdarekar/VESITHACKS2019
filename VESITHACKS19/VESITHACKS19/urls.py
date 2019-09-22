@@ -16,10 +16,12 @@ Including another URLconf
 from django.conf.urls import include, url
 
 from django.contrib import admin
+from django.conf.urls.static import static
+from django.conf import settings
 
 
 urlpatterns = [
     url('admin/', admin.site.urls),
    # path('', include('myproject1.urls')),
    url('EvaluationApp/',include('EvaluationApp.urls'),name= 'index'),
-]
+]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

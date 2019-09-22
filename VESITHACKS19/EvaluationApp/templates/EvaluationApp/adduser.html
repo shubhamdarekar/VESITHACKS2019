@@ -6,14 +6,7 @@
             Registration form
         </title>
         <style>
-            body{
-				margin:0;
-				padding:0;
-				font-family:sans-serif;
-				background: url(bg2.jpg) ;
-				background-size:cover;
-			}
-            .Heading h1{
+            {% comment %} #h11{
                 float:left;
                 color:#00ffff;
                 padding: 5px 0;
@@ -86,12 +79,12 @@
 			.btn:hover {
 				background-color: #336699;
 				color: none;
-			}
+			} {% endcomment %}
         </style>
     </head>
     <body>
         <div class="Heading">
-            <h1>USER INFO</h1>
+            <h1 id='h11'>USER INFO</h1>
         </div>
         <form >
             <div class="register-box">

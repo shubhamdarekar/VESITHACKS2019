@@ -115,8 +115,12 @@ def associateDash(request):
 	else:
 		return HttpResponse("Error")
 
-def employeeDash(request):
-	if(request.session['logged_in']):
-		return render(request,"EvaluationApp/employeedash.html")
-	else:
-		return HttpResponse("Error")
+# def employeeDash(request):
+# 	if(request.session['logged_in']):
+# 		return render(request,"EvaluationApp/employeedash.html")
+# 	else:
+# 		return HttpResponse("Error")
+
+def adduser(request):
+	return render(request,"EvaluationApp/adduser.html")
+	

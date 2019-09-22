@@ -75,6 +75,6 @@ def logout(request):
 	try:
 		del request.session['logged_in']
 	except KeyError:
-        pass
+		pass
 	return render(request,"EvaluationApp/landing_page.html")
 

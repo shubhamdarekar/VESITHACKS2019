@@ -1,7 +1,6 @@
 {% load static%}
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,12 +14,13 @@
     <link rel="stylesheet" href="{% static  '/cssadmin/SIdebar-Responsive-2.css' %}">
     <link rel="stylesheet" href="{% static  '/cssadmin/SIdebar-Responsive-21.css' %}">
     <link rel="stylesheet" href="{% static  '/cssadmin/styles.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
     <div></div>
     <nav class="navbar navbar-light navbar-expand-md navigation-clean-search">
-        <div class="container"><a class="navbar-brand" href="#">Company Name</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><a class="navbar-brand" href="\index">RATr</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav">
@@ -36,24 +36,18 @@
     <div id="wrapper">
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li> <a href="#">Add user</a></li>
-                <li> <a href="#">Delete user</a></li>
-                <li> <a href="#">Update User</a></li>
-            </ul>
-        </div>
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li> <a href="#">Add user</a></li>
-                <li> <a href="#">Delete user</a></li>
-                <li> <a href="#">Update User</a><a href="#">View hierarchy</a></li>
+                    <li> <button class="btn btn-dark btn-block" type="button" name="button" id="button">Add user</button></li>
+                    <li> <button class="btn btn-dark btn-block" type="button" name="button" id="button">Update User </button></li>
+                    <li> <button class="btn btn-dark btn-block" type="button" name="button" id="button">delete user </button></li>
+                    <li> <button class="btn btn-dark btn-block" type="button" name="button" id="button">View hierarchy</button></li>
             </ul>
         </div>
         <div class="page-content-wrapper">
             <div class="container-fluid"><a class="btn btn-link" role="button" href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars"></i></a>
                 <div class="row">
                     <div class="col-md-12">
-                        <div>
-                            <h1>Sidebar <small>menu </small></h1>
+                        <div class="here">
+                            
                         </div>
                         <p>Paragraph</p>
                     </div>
@@ -62,6 +56,11 @@
         </div>
     </div>
     <div id="wrapper"></div>
+    <script>
+            $("button").click(function(){
+                $("#here").html('<object data="/EvaluationApp/reportform.html">');
+            });     
+    </script>
     <script src="{% static  '/jsadmin/jquery.min.js' %}"></script>
     <script src="{% static  '/bootstrapadmin/js/bootstrap.min.js' %}"></script>
     <script src="{% static  '/jsadmin/Sidebar-Menu.js' %}"></script>

@@ -16,7 +16,8 @@
 <body>
     <div class="login-dark">
     
-        <form method="POST">{% csrf_token %}
+        <form method="POST" action="/loginVerify/" enctype="multipart/form-data">
+        {% csrf_token %}
             <h2 class="sr-only">Login Form</h2>
             <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
             <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>

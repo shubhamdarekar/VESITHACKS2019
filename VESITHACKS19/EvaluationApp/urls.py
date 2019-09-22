@@ -21,5 +21,9 @@ urlpatterns = [
     url('^$',views.index,name= 'index'),
     url('^index$',views.index,name= 'Index'),
     url('^Login/$',views.Login,name = 'Login'),
-    url('^systemadmin/$',views.openadmin)
+    url('^systemad',views.openadmin),
+    url('^empdash/$',views.openemp),
+    url('^dept/$',views.opendept),
+    url('^reportform/$',views.openrpt),
+
 ]

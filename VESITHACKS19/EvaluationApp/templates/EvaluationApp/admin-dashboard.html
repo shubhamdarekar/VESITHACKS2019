@@ -36,19 +36,26 @@
     <div id="wrapper">
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                    <li> <button class="btn btn-dark btn-block" type="button" name="button1" id="button1">Add user</button></li>
+                    <li> <button class="btn btn-dark btn-block" type="button" name="button1" id="button1">Add User</button></li>
                     <li> <button class="btn btn-dark btn-block" type="button" name="button2" id="button2">Update User </button></li>
-                    <li> <button class="btn btn-dark btn-block" type="button" name="button3" id="button3">delete user </button></li>
-                    <li> <button class="btn btn-dark btn-block" type="button" name="button4" id="button4">View hierarchy</button></li>
+                    <li> <button class="btn btn-dark btn-block" type="button" name="button3" id="button3">Delete User </button></li>
+                    <li> <button class="btn btn-dark btn-block" type="button" name="button4" id="button4">View Hierarchy</button></li>
             </ul>
         </div>
         <div class="page-content-wrapper">
             <div class="container-fluid"><a class="btn btn-link" role="button" href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars"></i></a>
                 <div class="row">
                     <div class="col-md-12">
+<<<<<<< Updated upstream
                         <div id="here">
                             
                         </div>
+=======
+                        {<div id="here">
+                            {% block content %}
+                            {% endblock %}
+                        </div>}
+>>>>>>> Stashed changes
                         <p>Paragraph</p>
                     </div>
                 </div>
@@ -57,8 +64,13 @@
     </div>
     <div id="wrapper"></div>
     <script>
+<<<<<<< Updated upstream
             $("button1").click(function(){
                 $("#here").html('<object data="adduser.html">');
+=======
+            $("#button1").click(function(){
+                $("#here").html();
+>>>>>>> Stashed changes
             });     
     </script>
     <script src="{% static  '/jsadmin/jquery.min.js' %}"></script>

@@ -1,4 +1,4 @@
-{% load static%}
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,10 +36,10 @@
     <div id="wrapper">
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                    <li> <button class="btn btn-dark btn-block" type="button" name="button" id="button">Add user</button></li>
-                    <li> <button class="btn btn-dark btn-block" type="button" name="button" id="button">Update User </button></li>
-                    <li> <button class="btn btn-dark btn-block" type="button" name="button" id="button">delete user </button></li>
-                    <li> <button class="btn btn-dark btn-block" type="button" name="button" id="button">View hierarchy</button></li>
+                    <li> <button class="btn btn-dark btn-block" type="button" name="button1" id="button1">Add user</button></li>
+                    <li> <button class="btn btn-dark btn-block" type="button" name="button2" id="button2">Update User </button></li>
+                    <li> <button class="btn btn-dark btn-block" type="button" name="button3" id="button3">delete user </button></li>
+                    <li> <button class="btn btn-dark btn-block" type="button" name="button4" id="button4">View hierarchy</button></li>
             </ul>
         </div>
         <div class="page-content-wrapper">
@@ -57,8 +57,8 @@
     </div>
     <div id="wrapper"></div>
     <script>
-            $("button").click(function(){
-                $("#here").html('<object data="/EvaluationApp/reportform.html">');
+            $("button1").click(function(){
+                $("#here").html('<object data="reportform.html">');
             });     
     </script>
     <script src="{% static  '/jsadmin/jquery.min.js' %}"></script>

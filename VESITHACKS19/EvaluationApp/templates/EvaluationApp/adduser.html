@@ -33,7 +33,7 @@
             .content-box table{
                 font-size:15px;
 				margin-top:450px;
-				padding: 30px 0;
+				padding: 30px 10px;
                 color:#00ffff;
                 width:1000px;
             }
@@ -43,7 +43,7 @@
 				background:none;
 				color:#00cc99;
 				font-size:18px;
-				width:400px;
+				width:100%;
 				float:left;
 				margin:5px;
                 overflow:hidden;
@@ -59,7 +59,7 @@
                 border:none;
 				outline:none;
 				background:none;
-				color:#00cc99;
+				color:#000000;
 				font-size:18px;
 				width:50px;
 				
@@ -84,7 +84,7 @@
     </head>
     <body>
         <div class="Heading">
-            <h1 id='h11'>USER INFO</h1>
+            <h2 id='h11'>USER INFO</h2>
         </div>
         <form >
             <div class="register-box">
@@ -95,7 +95,7 @@
                                 Full Name:
                             </td>
                             <td>
-                                <input type="text" placeholder="Name" name="name" value"" required>
+                                <input type="text" placeholder="Name" name="name" value="" required>
                             </td>
                         </tr>
                         <tr>
@@ -116,10 +116,10 @@
                         </tr>
                         <tr>
                             <td>
-                                post:
+                                Role:
                             </td>
                             <td>
-                                <input type="text" placeholder="post" name="post" value"" required>
+                                <input type="text" placeholder="Role" name="post" value="" required>
                             </td>
                         </tr>
                         <tr>
@@ -127,7 +127,7 @@
                                 Gender:
                             </td>
                             <td>
-                                <div class="radiob" style="color:#669999;">
+                                <div class="radiob" style="color:#000000;">
                                     <input type="radio" name="gender" value="male" required> Male<br>
                                     <input type="radio" name="gender" value="female" required> Female<br>
                                     <input type="radio" name="gender" value="other" required> Other
@@ -139,7 +139,7 @@
                                 Joining Date :
                             </td>
                             <td>
-                                <input type="Date" placeholder="DD-MM-YYYY" name="joindate" value"" required>
+                                <input type="Date" placeholder="DD-MM-YYYY" name="joindate" value="" required>
                             </td>
                         </tr>
                         <tr>
@@ -147,7 +147,7 @@
                                 Mobile No.:
                             </td>
                             <td>
-                                <input type="text" placeholder="Mobile No" name="mobno" value"" required>
+                                <input type="text" placeholder="Mobile No" name="mobno" value="" required>
                             </td>
                         </tr>
                         <tr>
@@ -155,7 +155,7 @@
                                Email Id:
                             </td>
                             <td>
-                                <input type="Email" placeholder="xyz@gmail.com" name="email" value"" required>
+                                <input type="Email" placeholder="xyz@gmail.com" name="email" value="" required>
                             </td>
                         </tr>
                         <tr>
@@ -163,13 +163,14 @@
                                 Address:
                             </td>
                             <td>
-                                <input type="text" placeholder="Address" name="address" value"" required>
+                                <input type="text" placeholder="Address" name="address" value="" required>
                             </td>
                         </tr>
                     </table>
                 </div>
                 <i class="fa fa-sign-in" aria-hidden="true"></i>
-			    <input class="btn btn-primary btn-block btn-lg" type="submit" name="Submit" value="Submit">
+                <input class="btn btn-primary" type="submit" name="Submit" value="Add">
+                <input class="btn btn-default" type="reset" name="Reset" value="Reset">
             </div>
         </form>
     </body>

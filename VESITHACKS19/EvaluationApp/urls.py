@@ -26,14 +26,22 @@ urlpatterns = [
     url('^dept/$',views.opendept),
     url('^reportform/$',views.openrpt),
     url('^loginVerify/$',views.verifyLogin),
+    url('^adduserdatabase/$',views.adduser_database),
     url('^adminDashboard/$',views.adminDash),
     url('^logout/$',views.logout),
+    # url('^mdDashboard/$',views.mdDash),
     url('^mdDashboard/$',views.mdDash),
     url('^hrDashboard/$',views.hrDash),
     url('^dhDashboard/$',views.dhDash),
     url('^dtDashboard/$',views.dtDash),
     url('^associateDashboard/$',views.associateDash),
     url('^employeeDashboard/$',views.employeeDash),
-    url('^adduser/$',views.adduser)
+    url('^adduser/$',views.adduser),
+    # url('^hrDashboard/$',views.hrDash),
+    # url('^dhDashboard/$',views.dhDash),
+    # url('^dtDashboard/$',views.dtDash),
+    # url('^associateDashboard/$',views.associateDash),
+    # url('^employeeDashboard/$',views.employeeDash),
+    url('^search/$',views.search),
 
 ]

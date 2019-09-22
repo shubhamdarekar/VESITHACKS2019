@@ -9,3 +9,6 @@ from django.template import loader
 def index(request):
 	return render(request,"EvaluationApp/index.html")
 # Create your views here.
+
+def Login(request):
+	return render(request,"EvaluationApp/loginpage.html")

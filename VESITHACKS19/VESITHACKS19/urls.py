@@ -18,10 +18,12 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf.urls.static import static
 from django.conf import settings
+from django.urls import path,include
 
 
 urlpatterns = [
     url('admin/', admin.site.urls),
    # path('', include('myproject1.urls')),
-   url('EvaluationApp/',include('EvaluationApp.urls'),name= 'index'),
+#    url('EvaluationApp/',include('EvaluationApp.urls'),name= 'index'),
+   path('', include('EvaluationApp.urls')),
 ]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -1,0 +1,14 @@
+.btn-primary:hover {
+  color:#fff;
+  background-color:#0069d9;
+  border-color:#0062cc;
+}
+
+.btn.btn-primary {
+  position:relative;
+  top:30%;
+  bottom:62%;
+  left:45%;
+  right:30%;
+}
+

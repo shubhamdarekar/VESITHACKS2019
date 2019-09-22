@@ -11,4 +11,8 @@ def index(request):
 # Create your views here.
 
 def Login(request):
-	return render(request,"EvaluationApp/dept-dashboard.html")
+	return render(request,"EvaluationApp/employeedash.html")
+
+def openadmin(request):
+	return render(request,"EvaluationApp/admin-dashboard.html")
+

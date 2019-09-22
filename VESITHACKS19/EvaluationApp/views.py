@@ -7,6 +7,9 @@ from django.template import loader
 #import mysql.connector
 from EvaluationApp.forms import LoginForm
 from .models import User
+# from django.db.models import Q
+from django.contrib import messages
+
 
 def index(request):
 	return render(request,"EvaluationApp/landing_page.html")
@@ -26,6 +29,7 @@ def opendept(request):
 
 def openrpt(request):
 	return render(request,"EvaluationApp/reportform.html")
+
 
 # def authlogin(request):
 # 	if request.method =='POST':
@@ -63,6 +67,8 @@ def verifyLogin(request):
 				return redirect('/associateDashboard/')
 			elif user.role == 'EMPLOYEE':
 				return redirect('/employeeDashboard/')
+
+
 
 def logout(request):
 	try:
@@ -124,3 +130,41 @@ def associateDash(request):
 def adduser(request):
 	return render(request,"EvaluationApp/adduser.html")
 	
+def employeeDash(request):
+	if(request.session['logged_in']):
+		return render(request,"EvaluationApp/employeedash.html")
+	else:
+		return HttpResponse("Error")
+	return render(request,"EvaluationApp/mddashboard.html")
+	return render(request,"EvaluationApp/admin-dashboard.html")
+
+
+def search(request):
+	if request.method == 'POST':
+		srch = request.POST['srh']
+
+		if srch:
+			match = User.objects.filter(email=srch)
+
+			if match:
+				return render(request,'EvaluationApp/admin-dashboard.html/',{'srh':match})
+			else:
+				messages.error(request,'No User Found')
+		else:
+			return redirect('landing_page/')
+
+
+def adduser_database(request):
+	if request.method == 'POST':
+		email = request.POST['email']
+		pwd = request.POST['password']
+		role = request.POST['']
+		dno = request.POST['']
+
+		newuser = User()
+		newuser.email = email
+		newuser.role = role
+		newuser.password = password
+		newuser.email = email
+		newuser.save()
+

@@ -28,9 +28,13 @@
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#">about us</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#">contact us</a></li>
                 </ul>
-                <form class="form-inline mr-auto" target="_self">
-                    <div class="form-group"><label for="search-field"><i class="fa fa-search"></i></label><input class="form-control search-field" type="search" name="search" id="search-field" style="color:#37434d;background-color:rgba(39,99,169,0.38);"></div>
-                </form><a class="btn btn-light action-button" role="button" href="/logout">Logout</a></div>
+
+                <form method="post" action="/search/" class="form-inline mr-auto" target="_self">
+                    {% csrf_token %}
+                    <div class="form-group"><label for="search-field"><i class="fa fa-search"></i></label><input type="text" name="srh" class="form-control"  placeholder="Enter an E-mail ID"  class="form-control search-field" type="search" name="search" id="search-field" style="color:#37434d;background-color:rgba(39,99,169,0.38);"></div>
+                    <!-- <label class="col-lg-2"><button type="Submit" class="btn btn-danger"></button>></label> -->
+                </form><br> </br>
+                <a class="btn btn-light action-button" role="button" href="\index">Logout</a></div>
         </div>
     </nav>
     <div id="wrapper">
@@ -45,15 +49,51 @@
         <div class="page-content-wrapper">
             <div class="container-fluid"><a class="btn btn-link" role="button" href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars"></i></a>
                 <div class="row">
+<<<<<<< Updated upstream
                     <div class="col-md-12">
+<<<<<<< Updated upstream
                         <div id="here" style="width:100%">
+=======
+                        <div id="here">
+=======
+                    <div class="col-md-12"><div>
+                    {% if messages %}
+                        <ul class="messages">
+                            {% for k in srh %}
+                                <li style="color: black">{{ k }}></li>>
+                            {% endfor %}
+                        </ul>>
+                    {% endif %}
+                </div><br>
+                    <div style="color: red">
+                        {% if match %}
+                            {% for k in srh %}
+                            <table border="0px", width="300px">
+                                <tr>
+                                    <td>email-id</td>
+                                </tr>
+                            </table>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+                <script>
+                    document.getElementByName('srh').addEventListener('keypress', function(event) {
+                    if (event.keyCode == 13) {
+                    event.preventDefault();
+                         }
+                    });
+                </script>
+                        <div class="here">
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
                             
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div
     <div id="wrapper"></div>
     <script>
     function loadDoc(button) {
@@ -69,17 +109,19 @@
                     xhttp.open("GET", "/adduser/", true);
                     break;
                     case 'button2':
-                xhttp.open("GET", "/updateuser/", true);
+                    xhttp.open("GET", "/updateuser/", true);
                     break;
                     case 'button3':
-                xhttp.open("GET", "/deleteuser/", true);
+                    xhttp.open("GET", "/deleteuser/", true);
                     break;
                     case 'button4':
-                xhttp.open("GET", "/viewuser/", true);
+                    xhttp.open("GET", "/viewuser/", true);
                     break;
-
                 }
-                xhttp.open("GET", "/adduser/", true);
+<<<<<<< Updated upstream
+                
+=======
+>>>>>>> Stashed changes
                 xhttp.send();
         }
     </script>

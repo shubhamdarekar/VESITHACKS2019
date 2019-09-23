@@ -4,6 +4,8 @@ from django.db import models
 
 
 class User(models.Model):
+    name = models.CharField(max_length=40,null = True)
+    username = models.CharField(max_length=50)
     email = models.CharField(max_length=50)
     d_no = models.ForeignKey('Dept',on_delete = models.SET_NULL,null = True,related_name='%(class)s_requests_created')
     role = models.CharField(max_length = 15)

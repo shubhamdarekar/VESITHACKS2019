@@ -21,7 +21,11 @@
                 <button type="submit" name="button" class="button" >SUBMIT</button><br><br>
             </td>
             <td>
-                <textarea class="report"name="Comments" rows="7" cols="40" style="width:350px;"></textarea><br>
+                <textarea class="report"name="Comments" rows="7" cols="40" style="width:350px;">
+                {% if report %}
+                    {{ report }}
+                {% endif %}
+                </textarea><br>
             </td>
         </tr>
     </form>

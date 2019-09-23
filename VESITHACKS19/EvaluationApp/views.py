@@ -9,6 +9,7 @@ from EvaluationApp.forms import LoginForm
 # from django.db.models import Q
 from django.contrib import messages
 from .models import User
+from .models import Report
 from .models import HRassessment
 from .models import User,Evaluates
 
@@ -249,6 +250,10 @@ def assessEmployees(request):
 def getEmpDetails(request):
 	if request.method == 'POST':
 		id = request.POST['userid']
+
+		u = Report.objects.get(user_id_id=id)
+		r = u.report
+		return render(request,"EvaluationApp/assessOperationsDept.html",{'report':r})
 
 def submitHrReport(request):
 	if request.method == 'POST':

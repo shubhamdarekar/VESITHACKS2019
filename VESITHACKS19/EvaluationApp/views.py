@@ -8,7 +8,7 @@ from django.template import loader
 from EvaluationApp.forms import LoginForm
 # from django.db.models import Q
 from django.contrib import messages
-from .models import User
+from .models import User,Evaluates
 
 
 def index(request):
@@ -241,3 +241,35 @@ def assessAssociates(request):
 
 def assessEmployees(request):
 	return render(request, 'EvaluationApp/reportform.html')
+
+def evlpr(request):
+	if request.method == 'POST':
+		user_id = request.POST['user_id']
+		comments = request.POST['Comments']
+		marks1 = request.POST['marks1']
+		marks2 = request.POST['marks2']
+		marks3 = request.POST['marks3']
+		marks4 = request.POST['marks4']
+		marks5 = request.POST['marks5']
+		marks6 = request.POST['marks6']
+		marks7 = request.POST['marks7']
+		marks8 = request.POST['marks8']
+		marks9 = request.POST['marks9']
+		marks10 = request.POST['marks10']
+		myid = request.session['logged_in']
+		print(myid)
+		table = Evaluates()
+		table.evaluated_by = User.objects.get(id =myid)
+		table.evaluation_of = User.objects.get(id = user_id)
+		table.e1 = marks1
+		table.e2 = marks2
+		table.e3 = marks3
+		table.e4 = marks4
+		table.e5 = marks5
+		table.e6 = marks6
+		table.e7 = marks7
+		table.e8 = marks8
+		table.e9 = marks9
+		table.e10 = marks10
+		table.save()
+	return redirect('/mdDashboard/')

@@ -7,7 +7,8 @@
 <body>
 
 <div id="evaluate">
-    <form>
+    <form action = "/evlpr/" method = 'POST' enctype = "multipart/form-data">
+    {% csrf_token %}
         <tr>
             <td>
                 <h1>Evaluate Public Relations Department</h1>
@@ -30,65 +31,66 @@
                 <label>
                 <strong>Q1.</strong>Build and sustain good image for company:<br>
                 </label> 
-                <input type="number" placeholder="Marks" name="marks"><br><br>
+                <input type="number" placeholder="Marks" name="marks1"><br><br>
                 
             </td>
             <td>
                 <label>
                 <strong>Q2.</strong>Brand through planned publicity campaign and PR activity.<br>
-                <input type="number" placeholder="Marks" name="marks"><br><br>
+                <input type="number" placeholder="Marks" name="marks2"><br><br>
                 </label>  
             </td>
             <td>
                 <label>
                 <strong>Q3.</strong>Dealing with enquires from public, press and outside organization.<br>
                 </label> 
-                <input type="number" placeholder="Marks" name="marks"><br><br>
+                <input type="number" placeholder="Marks" name="marks3"><br><br>
             </td>
             <td>
                 <label>
                 <strong>Q4.</strong>Organizing promotional events like conferences, tours and visit.<br>
                 </label> 
-                <input type="number" placeholder="Marks" name="marks"><br><br>
+                <input type="number" placeholder="Marks" name="marks4"><br><br>
             </td>
             <td>
                 <label>
                 <strong>Q5.</strong>Speaking publically at interviews, press conferences.<br>
                 </label> 
-                <input type="number" placeholder="Marks" name="marks"><br><br>
+                <input type="number" placeholder="Marks" name="marks5"><br><br>
             </td>
             <td>
                 <label>
                 <strong>Q6.</strong>Providing client with new information.<br>
                 </label> 
-                <input type="number" placeholder="Marks" name="marks"><br><br>
+                <input type="number" placeholder="Marks" name="marks6"><br><br>
             </td>
             <td>
                 <label>
                     <strong>Q7.</strong>Analysing media coverage.<br>
                 </label> 
-                    <input type="number" placeholder="Marks" name="marks"><br><br>
+                    <input type="number" placeholder="Marks" name="marks7"><br><br>
             </td>
             <td>
                 <label>
                 <strong>Q8.</strong>.Commissioning or undertaking relevent market research.<br>
                 </label> 
-                <input type="number" placeholder="Marks" name="marks"><br><br>
+                <input type="number" placeholder="Marks" name="marks8"><br><br>
             </td>
             <td>
                 <label>
                 <strong>Q9.</strong>Making publicity budgets, timescales.<br>
                 </label> 
-                <input type="number" placeholder="Marks" name="marks"><br><br>
+                <input type="number" placeholder="Marks" name="marks9"><br><br>
             </td>
             <td>
                 <label>
                 <strong>Q10.</strong>Awareness of media agenda.<br>
                 </label> 
-                <input type="number" placeholder="Marks" name="marks"><br><br>
+                <input type="number" placeholder="Marks" name="marks10"><br><br>
             </td>
             <button type="submit" name="button" class="button" >Submit</button>
             <button type="reset" name="button" class="button" >Reset</button><br><br>
+            <h1>Average = </h1>
         </tr>
     </form>
 </div>

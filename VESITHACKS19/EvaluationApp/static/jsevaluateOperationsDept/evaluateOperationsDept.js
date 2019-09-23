@@ -1,3 +1,5 @@
-$('#rating-form').on('change','[name="rating"]',function(){
-	$('#selected-rating').text($('[name="rating"]:checked').val());
+$('#post-form').on('submit', function(event){
+    event.preventDefault();
+    console.log("form submitted!")  // sanity check
+    create_post();
 });

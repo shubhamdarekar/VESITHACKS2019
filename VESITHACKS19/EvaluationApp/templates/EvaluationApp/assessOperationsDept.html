@@ -1,38 +1,17 @@
-{% load static%}
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
-<title>Evaluate Operations Dept</title>
+<title>Assess Operations Dept</title>
 </head>
 <body>
-    <div class="main">
-        {{ for i in range(10) :}}
-    <form id="rating-form">
-<span class="rating-star">
-<input type="radio" name="rating{{i}}" value="5"><span class="star"></span>
- 
-    <input type="radio" name="rating{{i}}" value="4"><span class="star"></span>
- 
-    <input type="radio" name="rating{{i}}" value="3"><span class="star"></span>
- 
-    <input type="radio" name="rating{{i}}" value="2"><span class="star"></span>
- 
-    <input type="radio" name="rating{{i}}" value="1"><span class="star"></span>
-</span>
-</form>
-    <p>Thanks For Giving <span id="selected-rating" class="selected-rating" >0</span> Stars.</p>
-    </div>  
-    {{endfor}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
-    {% comment %} <script src="{% static '/jsevaluateOperationsDept/evaluateOperationsDept.js' %}"></script> {% endcomment %}
 
 <div id="evaluate">
     <form method="POST" action="/getEmpDetails/">
     {% csrf_token %}
         <tr>
             <td>
-                <h1>Evaluate Operations Department</h1>
+                <h1>Assess Operations Dept</h1>
                 <h1>Reports Submitted:</h1>
             </td>
             <td>
@@ -42,7 +21,11 @@
                 <button type="submit" name="button" class="button" >SUBMIT</button><br><br>
             </td>
             <td>
-                <textarea class="report"name="Comments" rows="7" cols="40" style="width:350px;"></textarea><br>
+                <textarea class="report"name="Comments" rows="7" cols="40" style="width:350px;">
+                {% if report %}
+                    {{ report }}
+                {% endif %}
+                </textarea><br>
             </td>
         </tr>
     </form>

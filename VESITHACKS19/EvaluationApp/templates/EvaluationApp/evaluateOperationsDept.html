@@ -62,23 +62,23 @@
  
 <body>
     <div class="main">
-        {{ for i in range(10) :}}
-    <form id="rating-form">
-<span class="rating-star">
-<input type="radio" name="rating{{i}}" value="5"><span class="star"></span>
- 
-    <input type="radio" name="rating{{i}}" value="4"><span class="star"></span>
- 
-    <input type="radio" name="rating{{i}}" value="3"><span class="star"></span>
- 
-    <input type="radio" name="rating{{i}}" value="2"><span class="star"></span>
- 
-    <input type="radio" name="rating{{i}}" value="1"><span class="star"></span>
-</span>
-</form>
-    <p>Thanks For Giving <span id="selected-rating" class="selected-rating" >0</span> Stars.</p>
-    </div>  
-    {{endfor}}
+        {% for i in range(10) %}
+            <form id="rating-form">
+            <span class="rating-star">
+            <input type="radio" name="rating{{ i }}" value="5"><span class="star"></span>
+            
+                <input type="radio" name="rating{{ i }}" value="4"><span class="star"></span>
+            
+                <input type="radio" name="rating{{ i }}" value="3"><span class="star"></span>
+            
+                <input type="radio" name="rating{{ i }}" value="2"><span class="star"></span>
+            
+                <input type="radio" name="rating{{ i }}" value="1"><span class="star"></span>
+            </span>
+        </form>
+        <p>Thanks For Giving <span id="selected-rating" class="selected-rating" >0</span> Stars.</p>
+        </div>  
+        {% endfor %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
     <script src="{% static '/jsevaluateOperationsDept/evaluateOperationsDept.js' %}"></script>
 

@@ -224,3 +224,20 @@ def evaluateTechnicalDept(request):
 
 def evaluateCreativityDept(request):
 	return render(request, 'EvaluationApp/evaluateCreativityDept.html')	
+
+# HR ajax rendering
+
+def reportform(request):
+	return render(request, 'EvaluationApp/reportform.html')
+
+def assessDepthead(request):
+	return render(request, 'EvaluationApp/reportform.html')
+
+def assessDeptteam(request):
+	return render(request, 'EvaluationApp/reportform.html')
+
+def assessAssociates(request):
+	return render(request, 'EvaluationApp/reportform.html')
+
+def assessEmployees(request):
+	return render(request, 'EvaluationApp/reportform.html')

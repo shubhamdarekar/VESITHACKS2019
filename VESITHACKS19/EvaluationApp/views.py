@@ -8,9 +8,6 @@ from django.template import loader
 from EvaluationApp.forms import LoginForm
 # from django.db.models import Q
 from django.contrib import messages
-from .models import User
-from .models import Report
-from .models import HRassessment
 from .models import User,Evaluates
 
 
@@ -145,13 +142,6 @@ def deleteuser(request):
 def viewhierarchy(request):
 	return render(request,"EvaluationApp/viewhierarchy.html")
 	
-def employeeDash(request):
-	if(request.session['logged_in']):
-		return render(request,"EvaluationApp/employeedash.html")
-	else:
-		return HttpResponse("Error")
-	return render(request,"EvaluationApp/mddashboard.html")
-	return render(request,"EvaluationApp/admin-dashboard.html")
 
 
 def search(request):
@@ -237,51 +227,16 @@ def reportform(request):
 	return render(request, 'EvaluationApp/reportform.html')
 
 def assessDepthead(request):
-	return render(request, 'EvaluationApp/assessOperationsDept.html')
+	return render(request, 'EvaluationApp/reportform.html')
 
 def assessDeptteam(request):
-	return render(request, 'EvaluationApp/assessPRDept.html')
+	return render(request, 'EvaluationApp/reportform.html')
 
 def assessAssociates(request):
-	return render(request, 'EvaluationApp/assessTreasuryDept.html')
+	return render(request, 'EvaluationApp/reportform.html')
 
 def assessEmployees(request):
-	return render(request, 'EvaluationApp/assessTechnicalDept.html')
-
-# hr report submission
-
-def getEmpDetails(request):
-	if request.method == 'POST':
-		id = request.POST['userid']
-
-		u = Report.objects.get(user_id_id=id)
-		r = u.report
-		return render(request,"EvaluationApp/assessOperationsDept.html",{'report':r})
-
-def submitHrReport(request):
-	if request.method == 'POST':
-		id = request.POST['userid']
-		marks1 = request.POST['m1']
-		marks2 = request.POST['m2']
-		marks3 = request.POST['m3']
-		marks4 = request.POST['m4']
-		marks5 = request.POST['m5']
-		comments = request.POST['remarks']
-
-		s = HRassessment()
-		s.hra1 = marks1
-		s.hra2 = marks2
-		s.hra3 = marks3
-		s.hra4 = marks4
-		s.hra5 = marks5
-		s.hra_assessment_report = comments
-		s.assessedby_id = request.session['logged_in']
-		s.assessedof_id = id
-		s.save()
-
-		return render(request,"EvaluationApp/supervisordash.html")
-
-
+	return render(request, 'EvaluationApp/reportform.html')
 
 def evlpr(request):
 	if request.method == 'POST':
@@ -298,7 +253,6 @@ def evlpr(request):
 		marks9 = request.POST['marks9']
 		marks10 = request.POST['marks10']
 		myid = request.session['logged_in']
-		print(myid)
 		table = Evaluates()
 		table.evaluated_by = User.objects.get(id =myid)
 		table.evaluation_of = User.objects.get(id = user_id)
@@ -314,3 +268,6 @@ def evlpr(request):
 		table.e10 = marks10
 		table.save()
 	return redirect('/mdDashboard/')
+
+def heirar(request):
+	return render(request, 'EvaluationApp/vieweirarchy.html')

@@ -39,6 +39,11 @@ urlpatterns = [
     url('^associateDashboard/$',views.associateDash),
     url('^employeeDashboard/$',views.employeeDash),
     url('^adduser/$',views.adduser),
+
+    url('^evaluateHR/$',views.evaluateHR),
+    url('^evaluateDH/$',views.evaluateDH),
+    url('^evaluateDT/$',views.evaluateDT),
+    url('^evaluateAssociates/$',views.evaluateAssociates),
     url('^updateuser/$',views.updateuser),
     url('^deleteuser/$',views.deleteuser),
     # url('^hrDashboard/$',views.hrDash),

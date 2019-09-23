@@ -203,13 +203,19 @@ def deleteuser_database(request):
 		return render(request,'EvaluationApp/admin-dashboard.html/')
 
 def evaluateHR(request):
-	return render(request, 'EvaluationApp/EvaluationApp.html')
+	return render(request, 'EvaluationApp/evaluateHR.html')
 
-def evaluateDH(request):
-	return render(request, 'EvaluationApp/evaluateDH.html')
+def evaluateOperationsDept(request):
+	return render(request, 'EvaluationApp/evaluateOperationsDept.html')
 
-def evaluateDT(request):
-	return render(request, 'EvaluationApp/evaluateDT.html')
+def evaluatePublicRelationsDept(request):
+	return render(request, 'EvaluationApp/evaluatePublicRelationsDept.html')
 
-def evaluateAssociates(request):
-	return render(request, 'EvaluationApp/evaluateAssociates.html')
+def evaluateTreasuryDept(request):
+	return render(request, 'EvaluationApp/evaluateTreasuryDept.html')
+
+def evaluateTechnicalDept(request):
+	return render(request, 'EvaluationApp/evaluateTechnicalDept.html')
+
+def evaluateCreativityDept(request):
+	return render(request, 'EvaluationApp/evaluateCreativityDept.html')	

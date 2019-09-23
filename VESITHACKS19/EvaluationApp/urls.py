@@ -57,8 +57,8 @@ urlpatterns = [
     url('^assessAssociates/$',views.assessAssociates),
 
 # hr report submission
-    url('^getEmpDetails/$',views.getEmpDetails),
-    url('^submitHrReport/$',views.submitHrReport),
+    # url('^getEmpDetails/$',views.getEmpDetails),
+    # url('^submitHrReport/$',views.submitHrReport),
 
     url('^updateuser/$',views.updateuser),
     url('^deleteuser/$',views.deleteuser),

@@ -55,6 +55,7 @@
                 <li> <button class="btn btn-dark btn-block" type="button" name="button4" id="button4" onclick = 'loadDoc(this)'>Evaluate Treasury dept</button></li>
                 <li> <button class="btn btn-dark btn-block" type="button" name="button5" id="button5" onclick = 'loadDoc(this)'>Evaluate Creativity dept</button></li>
                 <li> <button class="btn btn-dark btn-block" type="button" name="button6" id="button6" onclick = 'loadDoc(this)'>Evaluate Technical dept</button></li>
+                <li> <button class="btn btn-dark btn-block" type="button" name="button7" id="button7" onclick = 'loadDoc(this)'>View Assessment Graph</button></li>
 
 
             </ul>
@@ -93,11 +94,14 @@
                     case 'button4':
                 xhttp.open("GET", "/evaluateTreasuryDept/", true);
                     break;
-                case 'button5':
+                    case 'button5':
                 xhttp.open("GET", "/evaluateTechnicalDept/", true);
                     break;
                     case 'button6':
                 xhttp.open("GET", "/evaluateCreativityDept/", true);
+                    break;
+                    case 'button7':
+                xhttp.open("GET", "/viewGraph/", true);
                     break;
                 }
                 xhttp.send();

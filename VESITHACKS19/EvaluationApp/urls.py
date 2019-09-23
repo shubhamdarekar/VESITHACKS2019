@@ -39,6 +39,7 @@ urlpatterns = [
     url('^associateDashboard/$',views.associateDash),
     url('^employeeDashboard/$',views.employeeDash),
     url('^adduser/$',views.adduser),
+    url('^viewhierarchy/$',views.viewhierarchy),
 
 # md daashboard functionality
     url('^evaluateHR/$',views.evaluateHR),

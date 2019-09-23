@@ -141,6 +141,9 @@ def updateuser(request):
 
 def deleteuser(request):
 	return render(request,"EvaluationApp/deleteuser.html")
+
+def viewhierarchy(request):
+	return render(request,"EvaluationApp/viewhierarchy.html")
 	
 def employeeDash(request):
 	if(request.session['logged_in']):

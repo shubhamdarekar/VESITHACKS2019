@@ -63,5 +63,6 @@ urlpatterns = [
     # url('^associateDashboard/$',views.associateDash),
     # url('^employeeDashboard/$',views.employeeDash),
     url('^search/$',views.search),
+    url('^evlpr/$',views.evlpr),
 
 ]

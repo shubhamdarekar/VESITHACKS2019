@@ -18,17 +18,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
-<body>
+<body style="background-color:#cdffee;">
     <div></div>
     <nav class="navbar navbar-light navbar-expand-md navigation-clean-search">
         <div class="container"><a class="navbar-brand" href="\adminDashboard">RATr</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse"
                 id="navcol-1">
-                <ul class="nav navbar-nav">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">product</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">about us</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">contact us</a></li>
-                </ul>
+                
 
                 <form method="post" action="/search/" class="form-inline mr-auto" target="_self">
                     {% csrf_token %}

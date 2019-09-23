@@ -201,3 +201,15 @@ def deleteuser_database(request):
 		user.delete()
 
 		return render(request,'EvaluationApp/admin-dashboard.html/')
+
+def evaluateHR(request):
+	return render(request, 'EvaluationApp/EvaluationApp.html')
+
+def evaluateDH(request):
+	return render(request, 'EvaluationApp/evaluateDH.html')
+
+def evaluateDT(request):
+	return render(request, 'EvaluationApp/evaluateDT.html')
+
+def evaluateAssociates(request):
+	return render(request, 'EvaluationApp/evaluateAssociates.html')

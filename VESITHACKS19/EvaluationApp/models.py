@@ -99,3 +99,6 @@ class Project(models.Model):
     dno = models.ForeignKey('Dept',on_delete = models.CASCADE,related_name='%(class)s_requests_created')
 
 
+class Report(models.Model):
+    user_id = models.ForeignKey("User", related_name='%(class)s_requests_created1', on_delete=models.CASCADE)
+    report = models.TextField() 

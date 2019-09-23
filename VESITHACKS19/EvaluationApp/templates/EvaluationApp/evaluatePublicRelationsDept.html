@@ -7,6 +7,16 @@
 <body>
 
 <div id="evaluate">
+
+<form id = "post-form"  enctype = "multipart/form">
+{% csrf_token %}
+            <td>
+                <input type="text" placeholder="user_id" name="user_id">
+            </td>
+            <td>
+                <button type="submit" name="button" class="button"  >SUBMIT</button><br><br>
+            </td>
+</form>
     <form action = "/evlpr/" method = 'POST' enctype = "multipart/form-data">
     {% csrf_token %}
         <tr>
@@ -17,11 +27,11 @@
             <td>
                 <input type="text" placeholder="user_id" name="user_id">
             </td>
-            <td>
+            {% comment %} <td>
                 <button type="button" name="button" class="button" >SUBMIT</button><br><br>
-            </td>
+            </td> {% endcomment %}
             <td>
-                <textarea class="report"name="Comments" rows="7" cols="40" style="width:350px;"></textarea><br>
+                <textarea class="report"name="Comments" rows="7" cols="40" id = "field" style="width:350px;"></textarea><br>
             </td>
             <td>
                 <input type="number" placeholder="Marks" name="marks"><br><br>
@@ -94,6 +104,10 @@
         </tr>
     </form>
 </div>
-
+<script>
+    $('#post-form').on('submit', function(event){
+    document.getElementById("field").innerHTML = "Hii"
+});</script>
 </body>
+
 </html>

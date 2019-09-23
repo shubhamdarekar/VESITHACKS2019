@@ -46,27 +46,30 @@ def openrpt(request):
 # 		return HttpResponse("<h1>Failed</h1>",)		
 		
 def verifyLogin(request):
-	if request.method == 'POST':
-		email = request.POST['email']
-		pwd = request.POST['password']
-		user = User.objects.get(email = email)
-
-		if pwd == user.password:
-			request.session['logged_in'] = user.id
-			if user.role == 'ADMIN':
-				return redirect('/adminDashboard/')
-			elif user.role == 'MD':
-				return redirect('/mdDashboard/')
-			elif user.role == 'HR':
-				return redirect('/hrDashboard/')
-			elif user.role == 'DH':
-				return redirect('/dhDashboard/')
-			elif user.role == 'DT':
-				return redirect('/dtDashboard/')
-			elif user.role == 'ASSOCIATE':
-				return redirect('/associateDashboard/')
-			elif user.role == 'EMPLOYEE':
-				return redirect('/employeeDashboard/')
+	try:
+		if request.method == 'POST':
+			email = request.POST['email']
+			pwd = request.POST['password']
+			user = User.objects.get(email = email)
+			
+			if pwd == user.password:
+				request.session['logged_in'] = user.id
+				if user.role == 'ADMIN':
+					return redirect('/adminDashboard/')
+				elif user.role == 'MD':
+					return redirect('/mdDashboard/')
+				elif user.role == 'HR':
+					return redirect('/hrDashboard/')
+				elif user.role == 'DH':
+					return redirect('/dhDashboard/')
+				elif user.role == 'DT':
+					return redirect('/dtDashboard/')
+				elif user.role == 'ASSOCIATE':
+					return redirect('/associateDashboard/')
+				elif user.role == 'EMPLOYEE':
+					return redirect('/employeeDashboard/')
+	except:
+		return HttpResponse("Error!! Invalid Details")
 
 
 

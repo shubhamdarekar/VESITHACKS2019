@@ -20,13 +20,13 @@
 <body>
     <div></div>
     <nav class="navbar navbar-light navbar-expand-md navigation-clean-search">
-        <div class="container"><a class="navbar-brand" href="#">Company Name</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+       <div class="container"><a class="navbar-brand" href="\index" style="font-family: Comic Sans MS;font-size:300% ">RATr</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Link 1</a></li>
+                    {% comment %} <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Link 1</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#">Link 2</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Link 3</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Link 3</a></li> {% endcomment %}
                 </ul>
                 <form class="form-inline mr-auto" target="_self">
                     <div class="form-group"><label for="search-field"><i class="fa fa-search"></i></label><input class="form-control search-field" type="search" name="search" id="search-field" style="color:#37434d;background-color:rgba(39,99,169,0.38);"></div>
@@ -36,6 +36,7 @@
     <div id="wrapper">
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
+<<<<<<< HEAD
                 <!-- <li> <button class="btn btn-dark btn-block" type="button" name="button1" id="button1" onclick = 'loadDoc(this)'>Add user</button></li> -->
                 <li> <button class="btn btn-dark btn-block" type="button" name="button1" id="button2" onclick = 'loadDoc(this)'>Evaluation HR</button></li>
                 <li> <button class="btn btn-dark btn-block" type="button" name="button2" id="button3" onclick = 'loadDoc(this)'>Evaluate Operations dept</button></li>
@@ -43,6 +44,17 @@
                 <li> <button class="btn btn-dark btn-block" type="button" name="button4" id="button5" onclick = 'loadDoc(this)'>Evaluate Treasury dept</button></li>
                 <li> <button class="btn btn-dark btn-block" type="button" name="button4" id="button5" onclick = 'loadDoc(this)'>Evaluate Creativity dept</button></li>
                 <li> <button class="btn btn-dark btn-block" type="button" name="button4" id="button5" onclick = 'loadDoc(this)'>Evaluate Technical dept</button></li>
+=======
+                {% comment %} <li> <button class="btn btn-dark btn-block" type="button" name="button1" id="button1" onclick = 'loadDoc(this)'>Add user</button></li> {% endcomment %}
+                <li> <button class="btn btn-dark btn-block" type="button" name="button1" id="button1" onclick = 'loadDoc(this)'>Evaluation HR</button></li>
+                {% comment %} <button2 href = "\EvaluationApp.html"><button2> {% endcomment %}
+                <li> <button class="btn btn-dark btn-block" type="button" name="button2" id="button2" onclick = 'loadDoc(this)'>Evaluate dept-head</button></li>
+                <li> <button class="btn btn-dark btn-block" type="button" name="button3" id="button3" onclick = 'loadDoc(this)'>Evaluate dept-team</button></li>
+                <li> <button class="btn btn-dark btn-block" type="button" name="button4" id="button4" onclick = 'loadDoc(this)'>Evaluate associates</button></li>
+                <li> <button class="btn btn-dark btn-block" type="button" name="button5" id="button5" onclick = 'loadDoc(this)'>Dummy 1</button></li>
+                <li> <button class="btn btn-dark btn-block" type="button" name="button6" id="button6" onclick = 'loadDoc(this)'>Dummy 2</button></li>
+
+>>>>>>> 8050d4ee0f67cb62e24a1f84e35ea9f83b44c67f
             </ul>
         </div>
         <div class="page-content-wrapper">
@@ -51,7 +63,6 @@
                     <div class="col-md-12">
                         <div id = 'here'>
                         </div>
-                        
                     </div>
                 </div>
             </div>
@@ -69,16 +80,16 @@
 
                 switch(button.id){
                     case 'button1':
-                    xhttp.open("GET", "/adduser/", true);
+                    xhttp.open("GET", "/evaluateHR/", true);
                     break;
                     case 'button2':
-                xhttp.open("GET", "/updateuser/", true);
+                xhttp.open("GET", "/evaluateDH/", true);
                     break;
                     case 'button3':
-                xhttp.open("GET", "/deleteuser/", true);
+                xhttp.open("GET", "/evaluateDT/", true);
                     break;
                     case 'button4':
-                xhttp.open("GET", "/viewuser/", true);
+                xhttp.open("GET", "/evaluateAssociates/", true);
                     break;
 
                 }

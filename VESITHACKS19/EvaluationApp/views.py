@@ -129,6 +129,12 @@ def associateDash(request):
 
 def adduser(request):
 	return render(request,"EvaluationApp/adduser.html")
+
+def updateuser(request):
+	return render(request,"EvaluationApp/updateUser.html")
+
+def deleteuser(request):
+	return render(request,"EvaluationApp/deleteuser.html")
 	
 def employeeDash(request):
 	if(request.session['logged_in']):
@@ -156,15 +162,54 @@ def search(request):
 
 def adduser_database(request):
 	if request.method == 'POST':
+		id = request.POST['id']
 		email = request.POST['email']
 		pwd = request.POST['password']
-		role = request.POST['']
-		dno = request.POST['']
+		role = request.POST['role']
+		dno = request.POST['dno']
 
 		newuser = User()
+		newuser.id = id
 		newuser.email = email
 		newuser.role = role
-		newuser.password = password
-		newuser.email = email
+		newuser.password = pwd
+		newuser.dno = dno
 		newuser.save()
+		return render(request,'EvaluationApp/admin-dashboard.html/')
 
+def updateuser_database(request):
+	if request.method == 'POST':
+		id = request.POST['id']
+		email = request.POST['email']
+		pwd = request.POST['password']
+		role = request.POST['role']
+		dno = request.POST['dno']
+
+		user = User.objects.get(id = id)
+		user.email = email
+		user.role = role
+		user.password = pwd
+		user.dno = dno
+		user.save()
+		return render(request,'EvaluationApp/admin-dashboard.html/')
+
+def deleteuser_database(request):
+	if request.method == 'POST':
+		id = request.POST['id']
+
+		user = User.objects.get(id = id)
+		user.delete()
+
+		return render(request,'EvaluationApp/admin-dashboard.html/')
+
+def evaluateHR(request):
+	return render(request, 'EvaluationApp/EvaluationApp.html')
+
+def evaluateDH(request):
+	return render(request, 'EvaluationApp/evaluateDH.html')
+
+def evaluateDT(request):
+	return render(request, 'EvaluationApp/evaluateDT.html')
+
+def evaluateAssociates(request):
+	return render(request, 'EvaluationApp/evaluateAssociates.html')

@@ -83,20 +83,19 @@
     </head>
     <body>
         <div class="Heading">
-            <h2 id='h11'>USER INFO</h2>
+            <h2 id='h11'>Update Info</h2>
         </div>
-        
-        <form method="POST" action="/adduserdatabase/" class="form-inline mr-auto" target="_self">
-            {% csrf_token %}
+        <form method="POST" action="/updateuserdatabase/">
+        {% csrf_token %}
             <div class="register-box">
                 <div class="content-box">
                     <table>
                         <tr>
                             <td>
-                                User id:
+                               User Id:
                             </td>
                             <td>
-                                <input type="text" placeholder="Username" name="id" value"" required>
+                                <input type="text" placeholder="ID" name="id" value="" required>
                             </td>
                         </tr>
                         <tr>
@@ -128,7 +127,7 @@
                                 Dept No:
                             </td>
                             <td>
-                                <input type="text" placeholder="Depart No" name="dno" value="">
+                                <input type="text" placeholder="Department No." name="dno" value="">
                             </td>
                         </tr>
                     </table>

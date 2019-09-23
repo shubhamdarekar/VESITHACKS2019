@@ -46,6 +46,7 @@ def openrpt(request):
 # 		return HttpResponse("<h1>Failed</h1>",)		
 		
 def verifyLogin(request):
+<<<<<<< HEAD
 	if request.method == 'POST':
 		email = request.POST['email']
 		pwd = request.POST['password']
@@ -69,6 +70,32 @@ def verifyLogin(request):
 				return redirect('/employeeDashboard/')
 		else:
 			return render(request,"EvaluationApp/landing_page.html")
+=======
+	try:
+		if request.method == 'POST':
+			email = request.POST['email']
+			pwd = request.POST['password']
+			user = User.objects.get(email = email)
+			
+			if pwd == user.password:
+				request.session['logged_in'] = user.id
+				if user.role == 'ADMIN':
+					return redirect('/adminDashboard/')
+				elif user.role == 'MD':
+					return redirect('/mdDashboard/')
+				elif user.role == 'HR':
+					return redirect('/hrDashboard/')
+				elif user.role == 'DH':
+					return redirect('/dhDashboard/')
+				elif user.role == 'DT':
+					return redirect('/dtDashboard/')
+				elif user.role == 'ASSOCIATE':
+					return redirect('/associateDashboard/')
+				elif user.role == 'EMPLOYEE':
+					return redirect('/employeeDashboard/')
+	except:
+		return HttpResponse("Error!! Invalid Details")
+>>>>>>> master
 
 
 
@@ -207,13 +234,19 @@ def deleteuser_database(request):
 		return render(request,'EvaluationApp/admin-dashboard.html/')
 
 def evaluateHR(request):
-	return render(request, 'EvaluationApp/EvaluationApp.html')
+	return render(request, 'EvaluationApp/evaluateHR.html')
 
-def evaluateDH(request):
-	return render(request, 'EvaluationApp/evaluateDH.html')
+def evaluateOperationsDept(request):
+	return render(request, 'EvaluationApp/evaluateOperationsDept.html')
 
-def evaluateDT(request):
-	return render(request, 'EvaluationApp/evaluateDT.html')
+def evaluatePublicRelationsDept(request):
+	return render(request, 'EvaluationApp/evaluatePublicRelationsDept.html')
 
-def evaluateAssociates(request):
-	return render(request, 'EvaluationApp/evaluateAssociates.html')
+def evaluateTreasuryDept(request):
+	return render(request, 'EvaluationApp/evaluateTreasuryDept.html')
+
+def evaluateTechnicalDept(request):
+	return render(request, 'EvaluationApp/evaluateTechnicalDept.html')
+
+def evaluateCreativityDept(request):
+	return render(request, 'EvaluationApp/evaluateCreativityDept.html')	

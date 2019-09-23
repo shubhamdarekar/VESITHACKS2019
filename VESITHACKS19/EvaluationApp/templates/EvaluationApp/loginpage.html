@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="{% static '/csslp/Navigation-with-Button.css' %}">
     <link rel="stylesheet" href="{% static '/csslp/styles.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/ionicons/svg/ios-lock.svg">
+
 </head>
 
 <body>
@@ -20,7 +22,7 @@
         <form method="POST" action="/loginVerify/" enctype="multipart/form-data">
         {% csrf_token %}
             <h2 class="sr-only">Login Form</h2>
-            <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
+            <div class="illustration"><i ><ion-icon name="lock">RATr</ion-icon></i></div>
             <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
             <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
             <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Log In</button></div>
@@ -28,7 +30,11 @@
         </form>
     </div>
     <script src="{% static '/jslp/jquery.min.js' %}"></script>
+<<<<<<< HEAD
     <script src="{% static '/bootstraplp/js/bootstrap.min.js' %}"></script>
+=======
+     <script src="{% static '/bootstraplp/js/bootstrap.min.js' %}"></script>
+>>>>>>> master
 </body>
 
 </html>

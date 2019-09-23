@@ -37,13 +37,32 @@
     <div id="wrapper">
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
                 <!-- <li> <button class="btn btn-dark btn-block" type="button" name="button1" id="button1" onclick = 'loadDoc(this)'>Add user</button></li> -->
-                <li> <button class="btn btn-dark btn-block" type="button" name="button1" id="button2" onclick = 'loadDoc(this)'>Evaluation HR</button></li>
+                <!-- <li> <button class="btn btn-dark btn-block" type="button" name="button1" id="button2" onclick = 'loadDoc(this)'>Evaluation HR</button></li>
                 <li> <button class="btn btn-dark btn-block" type="button" name="button2" id="button3" onclick = 'loadDoc(this)'>Evaluate Operations dept</button></li>
                 <li> <button class="btn btn-dark btn-block" type="button" name="button3" id="button4" onclick = 'loadDoc(this)'>Evaluate Public Relations dept</button></li>
                 <li> <button class="btn btn-dark btn-block" type="button" name="button4" id="button5" onclick = 'loadDoc(this)'>Evaluate Treasury dept</button></li>
                 <li> <button class="btn btn-dark btn-block" type="button" name="button4" id="button5" onclick = 'loadDoc(this)'>Evaluate Creativity dept</button></li>
+<<<<<<< HEAD
                 <li> <button class="btn btn-dark btn-block" type="button" name="button4" id="button5" onclick = 'loadDoc(this)'>Evaluate Technical dept</button></li>
+=======
+                <li> <button class="btn btn-dark btn-block" type="button" name="button4" id="button5" onclick = 'loadDoc(this)'>Evaluate Technical dept</button></li> -->
+
+                <!-- <li> <button class="btn btn-dark btn-block" type="button" name="button1" id="button1" onclick = 'loadDoc(this)'>Add user</button></li> --> 
+                <li> <button class="btn btn-dark btn-block" type="button" name="button1" id="button1" onclick = 'loadDoc(this)'>Evaluation HR</button></li>
+                 <!-- <button2 href = "\EvaluationApp.html"><button2>  -->
+                <li> <button class="btn btn-dark btn-block" type="button" name="button2" id="button2" onclick = 'loadDoc(this)'>Evaluate Operations dept</button></li>
+                <li> <button class="btn btn-dark btn-block" type="button" name="button3" id="button3" onclick = 'loadDoc(this)'>Evaluate Public Relations dept</button></li>
+                <li> <button class="btn btn-dark btn-block" type="button" name="button4" id="button4" onclick = 'loadDoc(this)'>Evaluate Treasury dept</button></li>
+                <li> <button class="btn btn-dark btn-block" type="button" name="button5" id="button5" onclick = 'loadDoc(this)'>Evaluate Creativity dept</button></li>
+                <li> <button class="btn btn-dark btn-block" type="button" name="button6" id="button6" onclick = 'loadDoc(this)'>Evaluate Technical dept</button></li>
+
+
+>>>>>>> master
             </ul>
         </div>
         <div class="page-content-wrapper">
@@ -72,15 +91,20 @@
                     xhttp.open("GET", "/evaluateHR/", true);
                     break;
                     case 'button2':
-                xhttp.open("GET", "/evaluateDH/", true);
+                xhttp.open("GET", "/evaluateOperationsDept/", true);
                     break;
                     case 'button3':
-                xhttp.open("GET", "/evaluateDT/", true);
+                xhttp.open("GET", "/evaluatePublicRelationsDept/", true);
                     break;
                     case 'button4':
-                xhttp.open("GET", "/evaluateAssociates/", true);
+                xhttp.open("GET", "/evaluateTreasuryDept/", true);
                     break;
-
+                case 'button5':
+                xhttp.open("GET", "/evaluateTechnicalDept/", true);
+                    break;
+                    case 'button6':
+                xhttp.open("GET", "/evaluateCreativityDept/", true);
+                    break;
                 }
                 xhttp.send();
         }

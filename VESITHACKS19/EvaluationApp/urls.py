@@ -41,9 +41,12 @@ urlpatterns = [
     url('^adduser/$',views.adduser),
 
     url('^evaluateHR/$',views.evaluateHR),
-    url('^evaluateDH/$',views.evaluateDH),
-    url('^evaluateDT/$',views.evaluateDT),
-    url('^evaluateAssociates/$',views.evaluateAssociates),
+    url('^evaluateOperationsDept/$',views.evaluateOperationsDept),
+    url('^evaluatePublicRelationsDept/$',views.evaluatePublicRelationsDept),
+    url('^evaluateTreasuryDept/$',views.evaluateTreasuryDept),
+    url('^evaluateTechnicalDept/$',views.evaluateTechnicalDept),
+    url('^evaluateCreativityDept/$',views.evaluateCreativityDept),
+
     url('^updateuser/$',views.updateuser),
     url('^deleteuser/$',views.deleteuser),
     # url('^hrDashboard/$',views.hrDash),

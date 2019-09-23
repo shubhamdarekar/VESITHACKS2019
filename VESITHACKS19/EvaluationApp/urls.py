@@ -40,12 +40,20 @@ urlpatterns = [
     url('^employeeDashboard/$',views.employeeDash),
     url('^adduser/$',views.adduser),
 
+# md daashboard functionality
     url('^evaluateHR/$',views.evaluateHR),
     url('^evaluateOperationsDept/$',views.evaluateOperationsDept),
     url('^evaluatePublicRelationsDept/$',views.evaluatePublicRelationsDept),
     url('^evaluateTreasuryDept/$',views.evaluateTreasuryDept),
     url('^evaluateTechnicalDept/$',views.evaluateTechnicalDept),
     url('^evaluateCreativityDept/$',views.evaluateCreativityDept),
+
+# hr dashboard functionality
+    url('^reportform/$',views.reportform),
+    url('^assessDepthead/$',views.assessDepthead),
+    # url('^assessDeptteam/$',views.assessDeptteam),
+    # url('^assessEmployees/$',views.assessEmployees),
+    # url('^assessAssociates/$',views.assessAssociates),
 
     url('^updateuser/$',views.updateuser),
     url('^deleteuser/$',views.deleteuser),

@@ -42,10 +42,10 @@
         <div id="sidebar-wrapper" style="background-color:rgb(0,0,0);">
             <ul class="sidebar-nav">
                 <li> <button class="btn btn-dark btn-block" type="button" name="button1" id="button1" onclick = 'loadDoc(this)'>Submit Report</button></li>
-                <li> <button class="btn btn-dark btn-block" type="button" name="button2" id="button2" onclick = 'loadDoc(this)'>Assess Dept Head </button></li>
-                <li> <button class="btn btn-dark btn-block" type="button" name="button3" id="button3" onclick = 'loadDoc(this)'>Assess Dept Team </button></li>
-                <li> <button class="btn btn-dark btn-block" type="button" name="button4" id="button4" onclick = 'loadDoc(this)'>Assess Employees</button></li>
-                <li> <button class="btn btn-dark btn-block" type="button" name="button4" id="button5" onclick = 'loadDoc(this)'>Assess Associates</button></li>
+                <li> <button class="btn btn-dark btn-block" type="button" name="button2" id="button2" onclick = 'loadDoc(this)'>Operations Department</button></li>
+                <li> <button class="btn btn-dark btn-block" type="button" name="button3" id="button3" onclick = 'loadDoc(this)'>PR Department</button></li>
+                <li> <button class="btn btn-dark btn-block" type="button" name="button4" id="button4" onclick = 'loadDoc(this)'>Technical Department</button></li>
+                <li> <button class="btn btn-dark btn-block" type="button" name="button4" id="button5" onclick = 'loadDoc(this)'>Treasury Department</button></li>
 
             </ul>
         </div>
@@ -76,16 +76,16 @@
                         xhttp.open("GET", "/reportform/", true);
                         break;
                         case 'button2':
-                        xhttp.open("GET", "/assessdepthead/", true);
+                        xhttp.open("GET", "/assessDepthead/", true);
                         break;
                         case 'button3':
-                        xhttp.open("GET", "/assessdeptteam/", true);
+                        xhttp.open("GET", "/assessDeptteam/", true);
                         break;
                         case 'button4':
-                        xhttp.open("GET", "/assessemployees/", true);
+                        xhttp.open("GET", "/assessEmployees/", true);
                         break;
                         case 'button5':
-                        xhttp.open("GET", "/assessemployees/", true);
+                        xhttp.open("GET", "/assessAssociates/", true);
                         break;
     
                     }

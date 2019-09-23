@@ -1,38 +1,17 @@
-{% load static%}
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
-<title>Evaluate Operations Dept</title>
+<title>Assess PR Dept</title>
 </head>
 <body>
-    <div class="main">
-        {{ for i in range(10) :}}
-    <form id="rating-form">
-<span class="rating-star">
-<input type="radio" name="rating{{i}}" value="5"><span class="star"></span>
- 
-    <input type="radio" name="rating{{i}}" value="4"><span class="star"></span>
- 
-    <input type="radio" name="rating{{i}}" value="3"><span class="star"></span>
- 
-    <input type="radio" name="rating{{i}}" value="2"><span class="star"></span>
- 
-    <input type="radio" name="rating{{i}}" value="1"><span class="star"></span>
-</span>
-</form>
-    <p>Thanks For Giving <span id="selected-rating" class="selected-rating" >0</span> Stars.</p>
-    </div>  
-    {{endfor}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
-    {% comment %} <script src="{% static '/jsevaluateOperationsDept/evaluateOperationsDept.js' %}"></script> {% endcomment %}
 
 <div id="evaluate">
     <form method="POST" action="/getEmpDetails/">
     {% csrf_token %}
         <tr>
             <td>
-                <h1>Evaluate Operations Department</h1>
+                <h1>Assess PR Dept</h1>
                 <h1>Reports Submitted:</h1>
             </td>
             <td>
@@ -54,32 +33,32 @@
             </td>
             <td>
                 <label>
-                <strong>Q1.</strong>Team leadership<br>
+                <strong>Q1.</strong>Oral and writing Communications Skills<br>
                 </label> 
                 <input type="number" placeholder="Marks" name="m1"><br><br>
                 
             </td>
             <td>
                 <label>
-                <strong>Q2.</strong>Business management
+                <strong>Q2.</strong>Interpersonal skills
                 </label>  
                 <input type="number" placeholder="Marks" name="m2"><br><br>
             </td>
             <td>
                 <label>
-                <strong>Q3.</strong>communication skill
+                <strong>Q3.</strong>Initiative
                 </label> 
                 <input type="number" placeholder="Marks" name="m3"><br><br>
             </td>
             <td>
                 <label>
-                <strong>Q4.</strong>customer service<br>
+                <strong>Q4.</strong>Presentation skills<br>
                 </label> 
                 <input type="number" placeholder="Marks" name="m4"><br><br>
             </td>
             <td>
                     <label>
-                    <strong>Q5.</strong>Lean manufacturing<br>
+                    <strong>Q5.</strong>Creativity<br>
                     </label> 
                     <input type="number" placeholder="Marks" name="m5"><br><br>
             </td>

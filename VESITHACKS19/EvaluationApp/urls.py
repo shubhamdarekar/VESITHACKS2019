@@ -51,9 +51,13 @@ urlpatterns = [
 # hr dashboard functionality
     url('^reportform/$',views.reportform),
     url('^assessDepthead/$',views.assessDepthead),
-    # url('^assessDeptteam/$',views.assessDeptteam),
-    # url('^assessEmployees/$',views.assessEmployees),
-    # url('^assessAssociates/$',views.assessAssociates),
+    url('^assessDeptteam/$',views.assessDeptteam),
+    url('^assessEmployees/$',views.assessEmployees),
+    url('^assessAssociates/$',views.assessAssociates),
+
+# hr report submission
+    url('^getEmpDetails/$',views.getEmpDetails),
+    url('^submitHrReport/$',views.submitHrReport),
 
     url('^updateuser/$',views.updateuser),
     url('^deleteuser/$',views.deleteuser),

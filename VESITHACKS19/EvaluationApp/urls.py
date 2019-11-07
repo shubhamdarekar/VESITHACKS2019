@@ -71,7 +71,7 @@ urlpatterns = [
     url('^evlpr/$',views.evlpr),
     url('^viewuser/$',views.heirar),
 
-    url('^viewGraph/$',views.viewGraph),
-    url('^fetchGraphValues/$',views.fetchGraphValues),
+    # url('^viewGraph/$',views.viewGraph),
+    # url('^fetchGraphValues/$',views.fetchGraphValues),
 
 ]

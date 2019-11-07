@@ -8,11 +8,7 @@ from django.template import loader
 from EvaluationApp.forms import LoginForm
 # from django.db.models import Q
 from django.contrib import messages
-from .models import User,Evaluates,HRassessment,Report
-from django.shortcuts import render_to_response
-import random
-import datetime
-import time
+from .models import User,Evaluates
 
 
 def index(request):
@@ -231,48 +227,16 @@ def reportform(request):
 	return render(request, 'EvaluationApp/reportform.html')
 
 def assessDepthead(request):
-	return render(request, 'EvaluationApp/assessOperationsDept.html')
+	return render(request, 'EvaluationApp/reportform.html')
 
 def assessDeptteam(request):
-	return render(request, 'EvaluationApp/assessPRDept.html')
+	return render(request, 'EvaluationApp/reportform.html')
 
 def assessAssociates(request):
-	return render(request, 'EvaluationApp/assessTechnicalDept.html')
+	return render(request, 'EvaluationApp/reportform.html')
 
 def assessEmployees(request):
-	return render(request, 'EvaluationApp/assessTreasuryDept.html')
-
-def getEmpDetails(request):
-    if request.method == 'POST':
-        id = request.POST['userid']
-
-        u = Report.objects.get(user_id_id=id)
-        r = u.report
-        return render(request,"EvaluationApp/assessOperationsDept.html",{'report':r})
-
-def submitHrReport(request):
-    if request.method == 'POST':
-        id = request.POST['userid']
-        marks1 = request.POST['m1']
-        marks2 = request.POST['m2']
-        marks3 = request.POST['m3']
-        marks4 = request.POST['m4']
-        marks5 = request.POST['m5']
-        comments = request.POST['remarks']
-
-        s = HRassessment()
-        s.hra1 = marks1
-        s.hra2 = marks2
-        s.hra3 = marks3
-        s.hra4 = marks4
-        s.hra5 = marks5
-        s.hra_assessment_report = comments
-        s.assessedby_id = request.session['logged_in']
-        s.assessedof_id = id
-        s.save()
-
-        return render(request,"EvaluationApp/supervisordash.html")
-
+	return render(request, 'EvaluationApp/reportform.html')
 
 def evlpr(request):
 	if request.method == 'POST':
@@ -306,25 +270,4 @@ def evlpr(request):
 	return redirect('/mdDashboard/')
 
 def heirar(request):
-	return render(request, 'EvaluationApp/vieweirarchy.html')
-
-def viewGraph(request):
-	return render(request, 'EvaluationApp/viewGraph.html')
-
-def fetchGraphValues(request):
-	if request.method == 'POST':
-		id = request.POST['userid']
-		s = HRassessment.objects.get(assessedof_id = id)
-
-		xdata = ["hra1", "hra2", "hra3", "hra4", "hra5"]
-		ydata = [s.hra1, s.hra2, s.hra3, s.hra4, s.hra5]
-
-		extra_serie = {"tooltip": {"y_start": "", "y_end": " cal"}}
-		chartdata = {'x': xdata, 'y1': ydata, 'extra1': extra_serie}
-		charttype = "pieChart"
-
-		data = {
-			'charttype': charttype,
-			'chartdata': chartdata,
-		}
-		return render_to_response('viewGraph.html', data)
+	return render(request, 'EvaluationApp/viewheirarchy.html')
